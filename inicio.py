@@ -20,6 +20,14 @@ def ingresar_tarea():
             errores(3)    
     lista_tareas.agregar_tarea(nombre_tarea)
 
+def seleccionar_completar_tarea():
+    posicion = int(input("Ingrese el índice a completar: ")) - 1
+    lista_tareas.marcar_completada(posicion)
+
+def seleccionar_eliminar_tarea():
+    posicion = int(input("Ingrese el índice de la tarea a eliminar: ")) - 1
+    lista_tareas.eliminar_tarea(posicion)
+
 
 def main():    
     os.system('cls')
@@ -31,11 +39,15 @@ def main():
                 case 1:
                     ingresar_tarea()
                 case 2:
-                    print('2')
+                    lista_tareas.mostrar_tareas()                    
+                    if lista_tareas.tamano_lista() > 0:
+                        seleccionar_completar_tarea()  
                 case 3:
                     lista_tareas.mostrar_tareas()
                 case 4:
-                    print('4')        
+                    lista_tareas.mostrar_tareas()                    
+                    if lista_tareas.tamano_lista() > 0:
+                        seleccionar_eliminar_tarea()  
                 case 0:
                     print('Ha finalizado el programa...')
                     break

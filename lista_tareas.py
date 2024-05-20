@@ -1,4 +1,5 @@
 from tarea import Tarea
+from errores import errores
 
 class ListaTareas:
     """Clase que gestiona una lista de tareas."""
@@ -14,9 +15,9 @@ class ListaTareas:
     def marcar_completada(self, posicion):
         try:
             self.tareas[posicion].marcar_completada()
-            print(f"Tarea '{self.tareas[posicion].nombre}' marcada como completada.")
+            print(f"Tarea '{self.tareas[posicion].nombre}' se ha marcado como completada.")
         except IndexError:
-            print("Error: La posición ingresada no es válida.")
+            print(errores(4))
 
     def mostrar_tareas(self):
         print('-' * 50)        
@@ -29,9 +30,12 @@ class ListaTareas:
         print('-' * 50)
 
     def eliminar_tarea(self, posicion):
-        """Elimina una tarea de la lista según su posición."""
         try:
             tarea_eliminada = self.tareas.pop(posicion)
-            print(f"Tarea '{tarea_eliminada.nombre}' eliminada de la lista.")
+            print(f"Tarea '{tarea_eliminada.nombre}' se ha eliminado.")
         except IndexError:
-            print("Error: La posición ingresada no es válida.")
+            print(errores(4))
+
+    def tamano_lista(self):
+        return len(self.tareas)
+    
