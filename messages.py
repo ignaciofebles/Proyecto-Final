@@ -1,3 +1,4 @@
+"""Diccionario que guarda los mensajes de error"""
 errors_dictionary = {
     '01':'Opción inválida...',
     '02':'Debe ingresar un número... ',
@@ -7,6 +8,7 @@ errors_dictionary = {
     '99':'Código de error no codificado'
 }
 
+"""Diccionario que gestiona los mensajes en la aplicación"""
 messages_dictionary = {
     '01':"La tarea 'variable_text' se ha agregado a la lista de tareas",
     '02':"La tarea 'variable_text' se ha marcado como completada.",
@@ -15,6 +17,7 @@ messages_dictionary = {
 
 }
 
+"""Muestra los mensajes de error"""
 def errors(error_number):
     try:
         print(errors_dictionary[error_number])
@@ -22,6 +25,7 @@ def errors(error_number):
         print(errors_dictionary['99'])
 
 
+"""Muestra los mensajes de la aplicación"""
 def messages(message_number,variable):
     try:        
         print(messages_dictionary[message_number].replace("variable_text", variable ))

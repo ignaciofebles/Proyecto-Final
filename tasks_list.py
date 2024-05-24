@@ -1,9 +1,10 @@
+"""Se importa la clase tarea desde el fichero task.py que es la clase con los atributos de la tarea"""
+"""Se importa el fichero de mensajes para gestionar los mensajes"""
 from task import Task
 import messages
 
 class TasksList:
-    """Clase que gestiona una lista de tareas."""
-    
+    """Esta es la clase lista de tareas que te gestiona la inicialización de la clase, agregar tarea, completar tarea, mostrar las tareas y eliminar las tareas"""
     def __init__(self):
         self.tasks = []
 
